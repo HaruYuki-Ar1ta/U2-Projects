@@ -1,3 +1,7 @@
+import javax.swing.*;
+import java.text.DecimalFormat;
+
+
 public class WidgetFactory {
 
     /*
@@ -28,4 +32,22 @@ public class WidgetFactory {
      Profit: $760.00
 
      */
+    public static void main(String[] args) {
+        int numDays = Integer.parseInt(JOptionPane.showInputDialog("How many days?"));
+
+
+        double productionCost = productionCost(numDays);
+        double profit = profit(numDays, productionCost);
+        }
+
+        public static double productionCost (int numDays){
+
+            return numDays * ((2 * 8) * (5 * 16.50)) ;
+        }
+
+        public static double profit (int numDays, double productionCost){
+
+            return  numDays * (10 * (10 * (2 * 8))) - productionCost;
+        }
+
 }
