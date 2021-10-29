@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.awt.*;
+
 public class RPGCharacter {
 
     /*
@@ -5,4 +8,7 @@ public class RPGCharacter {
     should display the character's battle stats. The GUI should have at least 4 label, 4 inputs and a button to click which calculates and displays
     the battle stats.
      */
+    public static void main(String[] args) {
+        new RPGCharacterGUI();
+    }
 }
