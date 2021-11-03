@@ -35,7 +35,10 @@ public class RPGCharacterGUI {
 
         submitScores.addActionListener(new scoreSubmission());
 
-
+        panel.add(strengthLabel);
+        panel.add(strengthInput);
+        panel.add(dexLabel);
+        panel.add(dexInput);
         window.add(panel);
 
         window.setVisible(true);
