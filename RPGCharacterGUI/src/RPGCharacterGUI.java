@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RPGCharacterGUI {
     /*
@@ -9,12 +11,19 @@ public class RPGCharacterGUI {
 
     JFrame window = new JFrame("Character Sheet");
     JPanel panel = new JPanel();
-    JButton button1 = new JButton(" button");
-    JButton button2 = new JButton(" button");
-    JButton button3 = new JButton(" button");
-    JButton button4 = new JButton(" button");
-    JLabel label1 =  new JLabel("Strength");
-    JTextArea field1 = new JTextArea();
+    JButton submitScores = new JButton("Submit");
+
+    JLabel strengthLabel =  new JLabel("Strength");
+    JTextArea strengthInput = new JTextArea("Enter Strength Score Here");
+
+    JLabel dexLabel = new JLabel("Dexterity");
+    JTextArea dexInput = new JTextArea("Enter Dexterity Here");
+
+    JLabel intLabel = new JLabel("Intelligence");
+    JTextArea intInput = new JTextArea("Enter Intelligence Here");
+
+    JLabel conLabel = new JLabel("Constitution");
+    JTextArea conInput = new JTextArea("Enter Constitution Here");
 
     public RPGCharacterGUI() {
         window.setSize(500, 250);
@@ -23,14 +32,22 @@ public class RPGCharacterGUI {
 
         panel.setBackground(Color.black);
 
-        panel.add(field1);
-        panel.add(label1);
-        panel.add(button1);
+
+        submitScores.addActionListener(new scoreSubmission());
+
+
         window.add(panel);
 
         window.setVisible(true);
     }
+        private class scoreSubmission implements ActionListener {
 
+            public void actionPerformed(ActionEvent actionEvent){
+                int strengthVal = Integer.parseInt(strengthInput.getText());
+                int dexterityVal = Integer.parseInt(dexInput.getText());
+            }
+
+        }
 
     }
 
