@@ -25,6 +25,7 @@ public class RPGCharacterGUI {
     JLabel conLabel = new JLabel("Constitution");
     JTextArea conInput = new JTextArea("Enter Constitution Here");
 
+    JTextArea endMessage = new JTextArea("");
     public RPGCharacterGUI() {
         window.setSize(500, 250);
         window.setLocationRelativeTo(null);
@@ -37,20 +38,43 @@ public class RPGCharacterGUI {
 
         panel.add(strengthLabel);
         panel.add(strengthInput);
+
         panel.add(dexLabel);
         panel.add(dexInput);
+
+        panel.add(intLabel);
+        panel.add(intInput);
+
+        panel.add(conLabel);
+        panel.add(conInput);
+
+        panel.add(submitScores);
+
+        panel.add(endMessage);
         window.add(panel);
 
         window.setVisible(true);
+
     }
+
         private class scoreSubmission implements ActionListener {
 
             public void actionPerformed(ActionEvent actionEvent){
                 int strengthVal = Integer.parseInt(strengthInput.getText());
                 int dexterityVal = Integer.parseInt(dexInput.getText());
-            }
+                int constitutionVal = Integer.parseInt(conInput.getText());
+                int intelligenceVal = Integer.parseInt(intInput.getText());
 
+                int damage = strengthVal * dexterityVal + intelligenceVal / 2 ;
+                int mp = intelligenceVal * constitutionVal + strengthVal * 2;
+                int defense = strengthVal + constitutionVal * dexterityVal;
+
+                endMessage.setText("Your base damage is: " + damage + "\nYour max mp is: " + mp + "\nYour defense is: " + defense);
+
+
+            }
         }
+
 
     }
 
