@@ -66,7 +66,7 @@ public class WidgetFactory {
             return  (10 * (10 * (2 * 8))) * numDays - productionCost;
         }
 
-        public static int numWidgets(int numDays){
+        public static int numWidgets(int numDays) {
 
         return 10 * 2 * 8 * numDays;
         }
